@@ -5,7 +5,7 @@ import Form from "./components/Form";
 class App extends Component {
   getRecipe(e) {
     e.preventDefault();
-    console.log("WORKING");
+    console.log("WORKING cool");
   }
   render() {
     return (
