@@ -3,10 +3,11 @@ import "./App.css";
 import Form from "./components/Form";
 
 class App extends Component {
-  getRecipe(e) {
+  getRecipe = e => {
     e.preventDefault();
-    console.log("WORKING cool");
-  }
+    const recipeName = e.target.elements.recipeName.value;
+    console.log(recipeName);
+  };
   render() {
     return (
       <div className="App">
