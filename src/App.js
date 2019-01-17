@@ -18,7 +18,9 @@ class App extends Component {
       `https://www.food2fork.com/api/search?key=${API_KEY}&q=chicken%20breast&page=5&count=10`
     );
     const data = await api_call.json();
-    console.log(data.recipes[0].recipe_id);
+    // console.log(data.recipes[0].recipe_id);
+    this.setState({ recipes: data.recipes });
+    console.log(this.state.recipes);
   };
   render() {
     return (
