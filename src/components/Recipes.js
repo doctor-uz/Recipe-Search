@@ -1,7 +1,11 @@
 import React from "react";
 
 const Recipes = props => (
-  <div className="container" key={props.recipe_id}>
+  <div
+    key={props.recipe_id}
+    className="container"
+    style={{ marginBottom: "2rem" }}
+  >
     <div className="row">
       {props.recipes.map(recipe => {
         return (
@@ -13,7 +17,8 @@ const Recipes = props => (
                 alt={recipe.title}
               />
               <div className="recipe__text">
-                <h5>{recipe.title}</h5>
+                <h5 className="recipes__title">{recipe.title}</h5>
+                <p className="recipes__subtitle" />
               </div>
             </div>
           </div>
