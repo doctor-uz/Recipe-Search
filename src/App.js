@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Form from "./components/Form";
+import Recipes from "./components/Recipes";
 
 const secrets = require("./secrets.json");
 
@@ -12,10 +13,10 @@ class App extends Component {
   };
 
   getRecipe = async e => {
-    // const recipeName = e.target.elements.recipeName.value;
+    const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
     const api_call = await fetch(
-      `https://www.food2fork.com/api/search?key=${API_KEY}&q=chicken%20breast&page=5&count=10`
+      `https://www.food2fork.com/api/search?key=${API_KEY}&q=${recipeName}&page=5&count=10`
     );
     const data = await api_call.json();
     // console.log(data.recipes[0].recipe_id);
@@ -29,9 +30,7 @@ class App extends Component {
           <h1 className="App-title">Recipe Search</h1>
         </header>
         <Form getRecipe={this.getRecipe} />
-        {this.state.recipes.map(recipe => {
-          return <p key={recipe.recipe_id}>{recipe.title}</p>;
-        })}
+        <Recipes recipes={this.state.recipes} />
       </div>
     );
   }
