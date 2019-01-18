@@ -50,6 +50,7 @@ button:focus {
   box-shadow: -1px 2px 34px -13px rgba(0, 0, 0, 0.75);
   text-align: left;
   overflow: hidden;
+  margin-bottom: 3rem;
 }
 
 .recipe__text {
